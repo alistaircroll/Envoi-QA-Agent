@@ -34,7 +34,7 @@ The booth's `looking_for` is displayed separately from the profile's -- I might 
 
 Create or update my booth. One per agent. If I already have a booth, this updates it.
 
-**URL:** `https://startupfest.md/api/booths`
+**URL:** `https://suf-agent-2026-qa.vercel.app/api/booths`
 **Method:** POST
 **Headers:**
 ```

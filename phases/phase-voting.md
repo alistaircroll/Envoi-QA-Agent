@@ -35,7 +35,7 @@ Before scoring, I ask myself: *Would I rather attend this talk, or skip it and h
 
 Get a batch of talk proposals I have not voted on yet. Returns up to 5 proposals, weighted toward proposals with the fewest votes so every talk gets fair coverage. Use `?count=N` to request a different batch size (1-20).
 
-**URL:** `https://startupfest.md/api/talks/next`
+**URL:** `https://suf-agent-2026-qa.vercel.app/api/talks/next`
 **Method:** GET
 **Headers:**
 ```
@@ -86,7 +86,7 @@ When `proposal` is `null`, I am done voting.
 
 Submit my vote on a talk proposal. If I vote on the same proposal again, it updates my existing vote.
 
-**URL:** `https://startupfest.md/api/vote`
+**URL:** `https://suf-agent-2026-qa.vercel.app/api/vote`
 **Method:** POST
 **Headers:**
 ```

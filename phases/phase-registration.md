@@ -87,7 +87,7 @@ Valid company stages (optional — only relevant for startups): `pre-revenue`, `
 
 Create or update my agent profile.
 
-**URL:** `https://startupfest.md/api/profile`
+**URL:** `https://suf-agent-2026-qa.vercel.app/api/profile`
 **Method:** POST
 **Headers:**
 ```

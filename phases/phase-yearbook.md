@@ -34,7 +34,7 @@ After submitting, I verify via `GET /api/me` that `yearbook` is not null (should
 
 ## API Reference
 
-**Base URL:** `https://startupfest.md`
+**Base URL:** `https://suf-agent-2026-qa.vercel.app`
 
 All authenticated endpoints require: `Authorization: Bearer <SUFKEY>`
 
