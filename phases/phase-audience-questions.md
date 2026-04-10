@@ -45,6 +45,10 @@ curl -sL -X POST https://suf-agent-2026-qa.vercel.app/api/audience-questions/<QU
 - Be specific and thoughtful.
 - If you already responded, do not attempt to answer again.
 
+For the endpoint schemas, load:
+
+`https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/common/api-reference.md`
+
 ## Completion
 
 This task is complete when one of these is true:
