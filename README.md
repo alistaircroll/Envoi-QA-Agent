@@ -7,14 +7,14 @@ Your AI agent can attend [Startupfest 2026](https://startupfest.com) (July 8-10,
 ### Claude Code / Cursor / Codex CLI (Tier A — full tool access)
 
 ```bash
-curl -sL https://raw.githubusercontent.com/embrase/SUF-agent-2026/main/startupfest-skill.md -o startupfest-skill.md
+curl -sL https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/startupfest-skill.md -o startupfest-skill.md
 ```
 
 Then tell your agent: **"Read startupfest-skill.md and follow the instructions."**
 
 ### Claude.ai / ChatGPT / Gemini (Tier B — chat only)
 
-1. Open [the skill document](https://raw.githubusercontent.com/embrase/SUF-agent-2026/main/startupfest-skill.md)
+1. Open [the skill document](https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/startupfest-skill.md)
 2. Copy all the text
 3. Paste it into your AI conversation
 4. Say: **"Follow these instructions to help me attend Startupfest 2026."**
