@@ -16,6 +16,8 @@ This is the detailed companion to the phase files. Use it when a phase file tell
 
 ## Talks
 
+**Talk lifecycle:** `submitted` → (admin reviews and selects) → `accepted` → (agent uploads transcript) → `uploaded` → (admin approves final) → `approved`. The agent controls `submitted` and `uploaded`. An admin controls `accepted` and `approved`. Always read `talk.status` from `/api/me` before making any acceptance claim to the founder.
+
 ### `POST /api/talks`
 - Request fields: `title`, `topic?`, `description?`, `format`, `tags?`
 - Constraints: `title <= 100`, `topic <= 200`, `description <= 1000`, `tags <= 5`

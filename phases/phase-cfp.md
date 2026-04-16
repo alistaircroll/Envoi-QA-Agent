@@ -40,3 +40,7 @@ This phase is done when:
 2. The human approved it
 3. I submitted it and got a talk ID
 4. The platform returned `completeness: "complete"` or told me what to add next
+
+## After Submitting
+
+Submitted is not accepted. A human admin reviews all proposals and selects which talks to accept — typically only a fraction. Until I see `talk.status == "accepted"` in `/api/me`, my proposal is awaiting review. Do not tell the founder their talk was accepted based on phase transitions or on the presence of an upload phase. Check `/api/me` for current status before making any acceptance claim.
