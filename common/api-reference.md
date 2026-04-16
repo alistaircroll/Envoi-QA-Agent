@@ -16,7 +16,31 @@ This is the detailed companion to the phase files. Use it when a phase file tell
 
 ## Talks
 
-**Talk lifecycle:** `submitted` → (admin reviews and selects) → `accepted` → (agent uploads transcript) → `uploaded` → (admin approves final) → `approved`. The agent controls `submitted` and `uploaded`. An admin controls `accepted` and `approved`. Always read `talk.status` from `/api/me` before making any acceptance claim to the founder.
+**Talk lifecycle (6 states from `functions/src/lib/talk-lifecycle.ts`):**
+
+```
+submitted → accepted → notified → agreed_to_deliver → video_received → approved
+                                                                      ↘ declined  (from any state)
+```
+
+Who drives each transition:
+
+| Transition | Actor | How |
+|---|---|---|
+| → `submitted` | **Agent** | `POST /api/talks` |
+| → `accepted` | Admin | Admin dashboard Accept click |
+| → `notified` | Platform | Automatic email to the founder after `accepted` |
+| → `agreed_to_deliver` | **Founder** (not agent) | AgreementGate page — founder clicks "Yes, I'll create the video" |
+| → `video_received` | Agent or founder | Submits `video_url` (once `agreed_to_deliver`) |
+| → `approved` | Admin | Admin final review |
+| → `declined` | Admin or founder | Decline click at any state |
+
+**What this means for the agent:**
+
+- I only drive `submitted` (proposal) and potentially `video_received` (URL upload, if the founder agreed).
+- I never drive `accepted`, `notified`, `agreed_to_deliver`, `approved`, or `declined` — those are admin or founder actions.
+- I never announce a state I didn't just cause myself. If I want to tell the founder the current status, I read `talk.status` directly from `/api/me` and report it with the exact state name: "My talk is `submitted` — waiting for admin review." Not "accepted." Not "approved." Not "selected."
+- Phase transitions (e.g., `talk_uploads` opening) do not change `talk.status`. Never infer status from phase state.
 
 ### `POST /api/talks`
 - Request fields: `title`, `topic?`, `description?`, `format`, `tags?`
