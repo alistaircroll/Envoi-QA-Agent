@@ -17,7 +17,7 @@ In the autonomous QA harness, you already have enough to act. Treat runtime fric
 
 1. Read the skill doc privately.
 2. Start by fetching the current platform state with the SUFKEY from your launch prompt:
-   `GET https://suf-agent-2026-qa.vercel.app/api/me?sufkey=<SUFKEY>`
+   `GET https://qa.envoiplatform.com/api/me?sufkey=<SUFKEY>`
 3. Treat the returned `phases` and `todo` as the live source of truth. The response also includes `api_base`; use that same origin for follow-up calls.
 4. For write actions, use `Authorization: Bearer <SUFKEY>`. Registration writes go to `POST {api_base}/api/profile`.
 5. Registration is not done until the registration todo disappears and the required profile fields are present in `/api/me`.

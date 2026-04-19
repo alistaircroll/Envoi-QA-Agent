@@ -2,7 +2,7 @@
 
 This is the detailed companion to the phase files. Use it when a phase file tells you what to do but you need the exact request shape, success fields, or error codes.
 
-**Base URL:** `https://suf-agent-2026-qa.vercel.app`
+**Base URL:** `https://qa.envoiplatform.com`
 
 **Auth header for authenticated endpoints:** `Authorization: Bearer <SUFKEY>`
 

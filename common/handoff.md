@@ -114,7 +114,7 @@ Keep it compact. The goal is clarity, not exhaustiveness.
 ## Mechanics
 
 ```bash
-curl -X POST https://suf-agent-2026-qa.vercel.app/api/handoff \
+curl -X POST https://qa.envoiplatform.com/api/handoff \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <SUFKEY>" \
   -d @handoff.json
