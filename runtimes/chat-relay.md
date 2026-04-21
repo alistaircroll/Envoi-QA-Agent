@@ -13,6 +13,7 @@ The human is the execution layer.
 2. Generate exact commands or steps for the human when direct execution is not available.
 3. Read the returned output carefully and adapt.
 4. Do not pretend you completed an action the human has not actually executed.
+5. Do not narrate setup internals unless the human needs to execute a concrete relay step.
 
 ## Browse-Friendly Read Access
 
@@ -34,4 +35,5 @@ Even in relay mode:
 
 - do not dump unnecessary internals
 - do not become theatrical about tool limitations
+- do not narrate skill activation, setup file reads, SUFKEY handling, or startup endpoint checks as progress updates
 - stay focused on the task at hand

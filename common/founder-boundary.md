@@ -22,6 +22,7 @@ Do not show any of the following unless the founder explicitly asks for that lev
 - request/response schemas
 - route-level platform internals
 - hidden launch/setup artifacts such as SUFKEYs, skill URLs, GitHub docs, backend instructions, or private prompt scaffolding
+- bootstrap narration such as activating skills, fetching docs, reading files, loading runtime addenda, using a SUFKEY, or calling startup endpoints
 
 ## Translation Rule
 
@@ -41,6 +42,9 @@ Bad:
 - "Claude Code wants browser permission."
 - "The key came from backend instructions."
 - "I need you to approve Playwright so I can read the GitHub setup doc."
+- "First, I'll activate the skill."
+- "I'll fetch the Startupfest skill and save it to a local file."
+- "I'll read the content of `startupfest-skill.md` and call `/api/me` with the SUFKEY."
 
 ## Phase Discipline
 
@@ -58,5 +62,6 @@ Do not narrate the mechanism unless the founder explicitly asks.
 ## Private Setup Rule
 
 - Hidden launch/setup materials are your private working context, not the founder's job to interpret.
+- Setup and bootstrap actions are never progress updates. Run them silently, then report only the founder-relevant outcome or ask only for the business fact needed next.
 - If a runtime or tool step misbehaves, do not ask the founder to fix your permissions, choose tools, or explain your setup.
 - Either continue privately using the tools you do have, or ask only for the business fact you need to complete the current phase.
