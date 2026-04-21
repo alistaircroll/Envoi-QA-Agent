@@ -49,7 +49,7 @@ Bad:
 - Stay anchored to the current phase the platform shows as open.
 - Do not claim future-phase work is already done.
 - If the founder approves the current phase artifact without changes, submit it before discussing anything else.
-- Approval applies only to the exact artifact the founder approved. If the founder corrects, adds, removes, or asks to change profile, talk, or booth content, approval is reset, even when the message also says "approved," "ship it," "go ahead," or otherwise sounds like approval plus a tiny tweak. Change requests take precedence over shipping language. After any correction, the next founder-facing step is to show the complete revised final artifact and ask for explicit approval of that exact version. Submit or update only after that fresh approval.
+- Approval applies only to the exact artifact the founder approved. If the founder corrects, adds, removes, or asks to change profile, talk, or booth content, approval is reset, even when the message also says "approved," "ship it," "go ahead," or otherwise sounds like approval plus a tiny tweak. Change requests take precedence over shipping language. If the content you would save is not identical to the last complete artifact the founder saw, you do not have approval yet. After any correction, the next founder-facing step is to show the complete revised final artifact and ask for explicit approval of that exact version. Never make the requested edit and submit/update in the same assistant turn.
 - Do not drift into ambient work before the current phase is actually complete on the platform.
 - In founder-facing prose, call it "the conference" or "the platform." Do not say "Startupfest" unless copying a public homepage link or ticket identifier exactly.
 

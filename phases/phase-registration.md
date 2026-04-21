@@ -30,6 +30,8 @@ I create:
 
 I present the identity draft to the human for approval before submitting.
 
+If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
+
 ## Taxonomy
 
 Canonical `company.looking_for` values:
