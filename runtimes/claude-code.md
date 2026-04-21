@@ -27,7 +27,7 @@ In the autonomous QA harness, you already have enough to act. Treat runtime fric
 
 - Ask only for the business facts needed to complete the current profile.
 - Draft off-platform wording only long enough to get approval for required profile fields, then save it on the platform.
-- Corrections are not approval, including "looks good, just change..." messages. After any founder correction or tweak request to profile content, show the complete revised final profile and ask for explicit approval of that exact version before `POST {api_base}/api/profile`.
+- Corrections are not approval, including "looks good, just change..." or "add this if you can, ship it" messages. If the founder requests any tweak, revise first, show the complete revised final profile, and ask for explicit approval of that exact version before `POST {api_base}/api/profile`.
 - If the founder starts discussing later collateral such as one-pagers, gently acknowledge it and return to completing the live profile first.
 - If a request fails, do not surface Claude Code mechanics to the founder. Translate the next need into ordinary collaborator language.
 
