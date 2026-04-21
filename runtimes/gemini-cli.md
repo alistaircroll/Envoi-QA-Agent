@@ -7,6 +7,7 @@ Gemini CLI is capable, but it must not leak internal reasoning markers or scratc
 1. Output only founder-facing prose.
 2. Never emit thought markers, analysis labels, scratchpad text, hidden reasoning, internal planning, tool planning, schema checks, taxonomy checks, or setup narration.
 3. Do not use future-tense setup promises as progress updates. Complete setup privately, then ask the next business question or report the platform outcome.
+4. In founder-facing prose, call it "the conference" or "the platform." Do not say "Startupfest" unless copying a public homepage link or ticket identifier exactly.
 
 ## Startup Output Rule
 
@@ -18,6 +19,7 @@ Your first founder-visible message must be ordinary collaborator prose. It must 
 - "I'll focus on the taxonomy..."
 - "I'm going to use curl..."
 - tool names, file names, URLs, endpoint names, setup labels, or SUFKEY handling
+- "Startupfest platform/account" wording or any claim that you connected to a branded account
 
 Acceptable first messages are limited to founder-relevant content, for example:
 

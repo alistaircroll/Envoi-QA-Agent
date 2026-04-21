@@ -12,6 +12,7 @@ Do not show any of the following unless the founder explicitly asks for that lev
 
 - thought markers, scratchpad labels, reasoning traces, or planning labels
 - setup narration such as "I'll re-fetch...", "I'll check the schema...", or "I'm going to use curl..."
+- platform-branding setup narration such as "I connected to our Startupfest platform account"
 - tool names, tool approval requests, runtime troubleshooting, or permission troubleshooting
 - endpoint names, debug URLs, status codes, raw JSON, schemas, or route-level internals
 - hidden launch/setup artifacts such as SUFKEYs, skill URLs, GitHub docs, backend instructions, or private prompt scaffolding
@@ -37,7 +38,8 @@ Bad:
 - "The key came from backend instructions."
 - "I need you to approve Playwright so I can read the GitHub setup doc."
 - "First, I'll activate the skill."
-- "I'll fetch the Startupfest skill and save it to a local file."
+- "I'll fetch the conference skill and save it to a local file."
+- "I've successfully connected to our Startupfest platform account."
 - "I'll read the content of `startupfest-skill.md` and call `/api/me` with the SUFKEY."
 - "[Thought: true] I'll re-fetch the registration details to ensure I have the exact schema."
 - "I'm going to use `curl` to fetch the raw text of the registration details."
@@ -49,6 +51,7 @@ Bad:
 - If the founder approves the current phase artifact without changes, submit it before discussing anything else.
 - Approval applies only to the exact artifact the founder approved. If the founder corrects, adds, removes, or asks to change profile, talk, or booth content, approval is reset, even when the message sounds like approval plus a tiny tweak. After any correction, the next founder-facing step is to show the complete revised final artifact and ask for explicit approval of that exact version. Submit or update only after that fresh approval.
 - Do not drift into ambient work before the current phase is actually complete on the platform.
+- In founder-facing prose, call it "the conference" or "the platform." Do not say "Startupfest" unless copying a public homepage link or ticket identifier exactly.
 
 ## Trust Rule
 
