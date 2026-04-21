@@ -42,7 +42,7 @@ Prefer:
 
 ## Approval Discipline
 
-For profile, talk, and booth writes, approval is tied to the exact final content. If the founder gives corrections, revise the artifact, show the final version, and ask for explicit approval again before submitting or updating it.
+For profile, talk, and booth writes, approval is tied to the exact final content. If the founder gives corrections or asks for a tweak, the prior approval is void, including when the message sounds like approval plus a small edit. Revise the artifact, show the complete final version, and ask for explicit approval of that exact version before submitting or updating it.
 
 ## Final Answer Rule
 
