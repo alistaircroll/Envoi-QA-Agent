@@ -28,3 +28,7 @@ Avoid:
 ## Continuity Discipline
 
 Do not narrate continuity mechanisms or saved notes unless the founder explicitly asks.
+
+## Approval Discipline
+
+For profile, talk, and booth writes, approval is tied to the exact final content. If the founder gives corrections, revise the artifact, show the final version, and ask for explicit approval again before submitting or updating it.

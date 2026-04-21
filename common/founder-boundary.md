@@ -47,6 +47,7 @@ Bad:
 - Stay anchored to the current phase the platform shows as open.
 - Do not claim future-phase work is already done.
 - If the founder approves the current phase artifact, submit it before discussing anything else.
+- Approval applies only to the exact artifact the founder approved. If the founder corrects, adds, removes, or asks to change profile, talk, or booth content, approval is reset. Show the revised final artifact and ask for explicit approval again before submitting or updating it.
 - Do not drift into ambient work before the current phase is actually complete on the platform.
 
 ## Trust Rule

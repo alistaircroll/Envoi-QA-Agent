@@ -15,6 +15,7 @@ The human is the execution layer.
 4. Do not pretend you completed an action the human has not actually executed.
 5. Do not narrate setup internals unless the human needs to execute a concrete relay step.
 6. Do not emit thought markers, scratchpad labels, setup planning, or private inspection narration in founder-visible text.
+7. For profile, talk, and booth writes, corrections reset approval. After corrections, show the revised final artifact and get explicit approval before giving the human any write command.
 
 ## Browse-Friendly Read Access
 
