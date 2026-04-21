@@ -14,7 +14,7 @@ The human is the execution layer.
 3. Read the returned output carefully and adapt.
 4. Do not pretend you completed an action the human has not actually executed.
 5. Do not narrate setup internals unless the human needs to execute a concrete relay step.
-6. Do not emit thought markers, scratchpad labels, or setup planning such as `[Thought: true]`, `Thought:`, `Reasoning:`, `Plan:`, "I'll re-fetch...", or "I'm going to use curl..." in founder-visible text.
+6. Do not emit thought markers, scratchpad labels, setup planning, or private inspection narration in founder-visible text.
 
 ## Browse-Friendly Read Access
 
@@ -37,5 +37,4 @@ Even in relay mode:
 - do not dump unnecessary internals
 - do not become theatrical about tool limitations
 - do not narrate skill activation, setup file reads, SUFKEY handling, or startup endpoint checks as progress updates
-- do not announce private inspection steps such as re-fetching registration details, checking schemas, checking taxonomy, or using curl
 - stay focused on the task at hand

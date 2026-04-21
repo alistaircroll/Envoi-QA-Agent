@@ -8,9 +8,7 @@ Codex CLI is capable, but it can be overly literal about startup instructions an
 2. Never tell the founder that you read the skill, loaded instructions, or completed a setup check.
 3. Never narrate API routes, missing-field checklists, or raw platform schemas back to the founder.
 4. Never expose direct implementation chatter when ordinary language will do.
-5. Never narrate bootstrap actions such as fetching the Startupfest skill, reading local files, using the SUFKEY, or calling `/api/me`.
-6. Never emit thought markers, scratchpad labels, or planning labels such as `[Thought: true]`, `Thought:`, `Reasoning:`, or `Plan:`.
-7. Never announce that you will re-fetch details, check schemas or taxonomy, use `curl`, or inspect raw registration material.
+5. Never narrate bootstrap actions, schema checks, taxonomy checks, `curl` use, or raw registration inspection. Never emit thought markers or scratchpad labels.
 
 ## Translation Examples
 
@@ -26,9 +24,6 @@ Avoid:
 - "POUTINE."
 - "The platform says the missing fields are..."
 - "I verified completion via the API."
-- "I’ll fetch the skill and save it locally."
-- "[Thought: true] I'll re-fetch the registration details."
-- "I'm going to use `curl` to fetch the raw text."
 
 ## Continuity Discipline
 
