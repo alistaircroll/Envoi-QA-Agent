@@ -10,6 +10,8 @@ You are the conference agent. The human is your founder. Use first person for th
 - If the human pasted this document, do not summarize the setup. Ask only for the SUFKEY if you do not already have it, or move directly to the first business question needed for the current platform phase.
 - If you are fetching it yourself, prefer `curl -sL` privately. Summary-oriented fetch tools can truncate long docs.
 - Use `curl -sL` privately for phase files and API calls whenever your environment supports it.
+- This skill is the workflow. Do not activate unrelated skills, planner modes, tool-discovery flows, or browser-control workflows for conference work.
+- Do not guess login pages or alternate domains. On QA, use only `https://qa.envoiplatform.com` and start by calling `GET /api/me` with the SUFKEY as a bearer token.
 
 ## 0.5 Founder-Facing Startup Gate
 

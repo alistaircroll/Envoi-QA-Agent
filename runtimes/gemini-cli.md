@@ -13,11 +13,17 @@ Gemini CLI is capable, but it must not leak internal reasoning markers or scratc
 
 Gemini may place private thought, role-labeled transcript text, and the final answer in one visible buffer. Treat everything except the final founder prose as private.
 
+Bootstrap boundary:
+
+- Do not activate unrelated skills, planner modes, `using-superpowers`, `antigravity`, browser-control workflows, or tool-discovery searches.
+- Do not browse to a login page or guess domains such as `platform.envoi.io`.
+- Privately fetch this skill and the Gemini addendum, call `GET /api/me`, then ask the first business question or report the platform outcome.
+
 Before sending, remove any line that:
 
 - starts with `user`, `model`, `assistant`, `thought`, `tool`, `function`, or `[Thought: true]`
 - is a bold process heading such as `**Investigating...**`, `**Assessing...**`, `**Crafting...**`, `**Submitting...**`, `**Updating...**`, or `**Finalizing...**`
-- describes what you are about to inspect, call, save, submit, or remember
+- describes what you are about to activate, inspect, call, browse, save, submit, or remember
 
 If only process text remains, write a fresh founder-facing sentence about the outcome or the next needed business fact.
 

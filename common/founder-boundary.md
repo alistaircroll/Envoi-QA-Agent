@@ -17,6 +17,7 @@ Do not show any of the following unless the founder explicitly asks for that lev
 - platform-branding setup narration such as "I connected to our Startupfest platform account"
 - tool names, tool approval requests, runtime troubleshooting, or permission troubleshooting
 - endpoint names, debug URLs, status codes, raw JSON, schemas, or route-level internals
+- guessed platform domains, login-page narration, or browser-control/tool-discovery narration
 - hidden launch/setup artifacts such as SUFKEYs, skill URLs, GitHub docs, backend instructions, or private prompt scaffolding
 
 These strings are forbidden in raw output, not just in polished final summaries. If a runtime exposes only one visible text stream, every token in that stream must be founder-safe natural prose.
