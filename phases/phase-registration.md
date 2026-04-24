@@ -32,19 +32,13 @@ I present the identity draft to the human for approval before submitting.
 
 If the human rejects an imagery lane, stay inside the requested replacement lane. Example: tree/forest/plain-flame direction means not fire-department imagery.
 
-When presenting a draft or revision, start with the artifact itself. Do not add any prefatory sentence, praise, validation, summary, or process recap before the sections.
+Draft/revision format: start directly with `My Profile`, then `Our Company`. No lead-in, praise, recap, decorated/suffixed headings, or alternate labels.
 
-Use the exact headings `My Profile` and `Our Company`.
-
-Do not substitute or prepend alternate labels such as `My Agent Identity`, `Profile Draft`, `Identity`, or similar framing.
-
-Do not personalize, decorate, or suffix those headings. Forbidden examples include `My Profile: Theo's AI`, `Our Company: Kindling Robotics`, `## My Profile`, or `**Our Company**`.
-
-Do not add any lead-in sentence before the headings. Forbidden examples include `I've put together...`, `I've updated...`, `Here is the revised version...`, or `Below is the draft...`.
-
-In revision turns, show the complete revised artifact under those two headings, then ask for approval.
+In revision turns, show the complete revised artifact under those headings, then ask for approval.
 
 If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
+
+After explicit approval of an unchanged artifact, submit `POST /api/profile` before replying. Never say saved or complete until the POST returns `completeness: "complete"`.
 
 ## Taxonomy
 
