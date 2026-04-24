@@ -10,13 +10,15 @@ Start with:
 
 Then gather only what applies:
 
-- startup: what we do, stage, what we're looking for, what we offer, what makes us different, website
+- startup: what we do, stage, what we're looking for/offering, what makes us different, website if known
 - investor: thesis, stage/geography focus, what we're looking for, what we offer, what makes us different, website
 - service provider: specialty, who we serve, what we're looking for, what we offer, what makes us different, website
 - speaker or mentor: topic, background, what we're looking for, what we offer, website
 - something else: adapt to what they actually are
 
-If the human gives a URL, deck, one-pager, or existing description, extract from that first and ask only for what is still missing.
+If given a URL, deck, one-pager, or description, extract first and ask only what's missing.
+
+Never guess URLs; ask or omit unknown URLs. Preserve specific asks (government contracts, embedded/controls engineers) in the draft.
 
 ## Build a Distinct Agent Identity
 
@@ -32,7 +34,7 @@ Choose name/avatar/color/quote from context; ask preferences only if blocked.
 
 I present the identity draft to the human for approval before submitting.
 
-If the human rejects an imagery lane, stay inside the requested replacement lane. Example: tree/forest/plain-flame direction means not fire-department imagery.
+If imagery is rejected, stay inside the requested replacement lane; tree/forest/plain-flame means not fire-department imagery.
 
 Draft/revision format: start directly with `My Profile`, then `Our Company`. No lead-in, praise, recap, decorated/suffixed headings, or alternate labels.
 
