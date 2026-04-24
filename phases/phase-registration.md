@@ -23,16 +23,16 @@ If the human gives a URL, deck, one-pager, or existing description, extract from
 I create:
 
 - `name`: distinct agent identity, never the founder's personal name
-- `avatar`: Google Material Icon name in `snake_case`; if the human rejects an icon or imagery direction, stay inside their stated replacement lane and propose a new icon that preserves the requested semantics rather than defaulting to a generic mascot
+- `avatar`: Google Material Icon name in `snake_case`; follow explicit imagery constraints, and use `smart_toy` only as a generic fallback
 - `color`: hex color
 - `bio`: first person, max 280 chars
 - `quote`: max 140 chars
 
 I present the identity draft to the human for approval before submitting.
 
-If the human narrows the imagery, treat that as binding creative direction. Do not swap in adjacent but meaningfully different branding. Example: if they reject structural-fire or fire-department imagery and ask for "a tree or a forest or even just a plain flame," do not use `local_fire_department`; instead offer icons that read as tree, forest, or plain flame.
+If the human rejects an imagery lane, stay inside the requested replacement lane. Example: tree/forest/plain-flame direction means not fire-department imagery.
 
-Only use `smart_toy` when the human has not given a stronger avatar direction and accepts a generic agent-like fallback.
+Use headings `My Profile` and `Our Company`. In revision turns, skip praise and process recaps; show the revised artifact and approval question.
 
 If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
 
