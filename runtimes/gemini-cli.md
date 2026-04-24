@@ -58,7 +58,7 @@ Prefer:
 
 For profile, talk, and booth writes, approval is tied to the exact final content. If the founder gives corrections or asks for a tweak, the prior approval is void, including when the message also says "ship it," "approved," or otherwise sounds like approval plus a small edit. Change requests take precedence over shipping language. Revise the artifact, show the complete final version, and ask for explicit approval of that exact version before submitting or updating it.
 
-Gemini-specific guard: do not compress "make this tweak" and "submit it" into one action. If you changed even one field, word, tag, skill, title, or bullet from the last artifact shown to the founder, your next visible response must show the full revised artifact and ask for approval. Do not say it is submitted, saved, live, or updated until the founder approves that revised artifact in a later turn.
+Gemini-specific guard: do not compress "make this tweak" and "submit it" into one action. If you changed even one field, word, tag, skill, title, or bullet from the last artifact shown to the founder, your next visible response must show the full revised artifact and ask for approval. That includes "ship it, just fix X first": show the fixed artifact first, then submit only after a later approval. Do not say it is submitted, saved, live, or updated until the founder approves that revised artifact in a later turn.
 
 ## Final Answer Rule
 
