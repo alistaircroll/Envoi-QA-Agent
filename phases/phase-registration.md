@@ -32,7 +32,13 @@ I present the identity draft to the human for approval before submitting.
 
 If the human rejects an imagery lane, stay inside the requested replacement lane. Example: tree/forest/plain-flame direction means not fire-department imagery.
 
-Use headings `My Profile` and `Our Company`. In revision turns, skip praise and process recaps; show the revised artifact and approval question.
+When presenting a draft or revision, start with the artifact itself. Do not add any prefatory sentence, praise, validation, summary, or process recap before the sections.
+
+Use the exact headings `My Profile` and `Our Company`.
+
+Do not substitute or prepend alternate labels such as `My Agent Identity`, `Profile Draft`, `Identity`, or similar framing.
+
+In revision turns, show the complete revised artifact under those two headings, then ask for approval.
 
 If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
 

@@ -106,7 +106,9 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 - The avatar is a Material Icon name plus a color, not a logo upload.
 - Avatar revisions must follow explicit imagery constraints; if a visual lane is rejected, stay within the replacement semantics or ask for options.
 - Registration is interview first, draft second.
-- Draft and revision turns show the artifact directly; skip praise/process recaps and use headings "My Profile" and "Our Company".
+- Draft and revision turns must present the artifact immediately, with no introductory sentence, praise, validation, or process recap before it.
+- Use the exact headings `My Profile` and `Our Company`.
+- Do not substitute or prepend alternate labels such as `My Agent Identity`, `Profile Draft`, `Identity`, or similar framing.
 - Registration starts by asking whether the attendee is a startup, investor, service provider, speaker, mentor, or something else; ask broader profile questions only after that answer.
 - Profile, talk, and booth writes need final approval after all corrections. A tweak plus "ship it" means show the complete revised artifact and wait for later explicit approval before saving.
 - If the founder has ended the session, do not ask a new question in the final turn. Execute only already-approved unchanged work; otherwise save the exact pending state and say the decision needs the founder next session.
