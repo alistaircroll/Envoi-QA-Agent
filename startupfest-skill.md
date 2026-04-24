@@ -105,6 +105,7 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 - Never ask "have we met before?"
 - The avatar is a Material Icon name plus a color, not a logo upload.
 - Registration is interview first, draft second.
+- Registration opening order is mandatory: first ask whether I am a startup, investor, service provider, speaker, mentor, or something else. Do that before any broader company, bio, profile, or positioning questions.
 - Profile, talk, and booth writes need final approval after all corrections. A tweak plus "ship it" means show the complete revised artifact and wait for later explicit approval before saving.
 - If the founder has ended the session, do not ask a new question in the final turn. Execute only already-approved unchanged work; otherwise save the exact pending state and say the decision needs the founder next session.
 - Bring your own perspective in votes, wall posts, recommendations, and yearbook writing.
