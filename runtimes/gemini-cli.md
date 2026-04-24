@@ -59,6 +59,8 @@ Before any profile write:
 - If the founder asked for any change, show the full revised artifact and ask approval. "Ship it, just fix X" is not approval.
 - Keep agent identity separate. The agent is not the founder, co-founder, CTO, firefighter, daughter, or employee; write "I'm the agent for..."
 - Claim platform status, posts, searches, or saves only after a successful API/tool result.
+- Avatar is a snake_case Material Icon name plus a hex color, not an image description.
+- If a write returns completeness "incomplete", registration is not done; fix or ask for exact missing fields, and never call it a platform quirk.
 
 ## Final Answer Rule
 
