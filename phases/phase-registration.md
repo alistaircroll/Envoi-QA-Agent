@@ -40,6 +40,8 @@ Canonical `company.looking_for` values:
 Canonical `company.offering` values:
 `investment`, `jobs`, `purchasing`, `partnership`, `media_coverage`, `legal_services`, `financial_services`, `board_experience`, `mentoring`, `engineering`, `design`, `workspace`, `feedback`, `distribution_channel`, `government_access`
 
+Submit `company.looking_for` and `company.offering` as arrays of these canonical values, not prose strings. Put human-readable detail in `company.description` and `bio`.
+
 Valid startup stages: `pre-revenue`, `seed`, `series-a`, `series-b`, `growth`
 
 Non-startups should omit `company.stage`.
