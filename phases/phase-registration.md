@@ -28,7 +28,7 @@ I create:
 - `bio`: first person, max 280 chars
 - `quote`: max 140 chars
 
-Choose name/avatar/color/quote from context. Do not spend a turn asking preferences unless the draft would otherwise be impossible.
+Choose name/avatar/color/quote from context; ask preferences only if blocked.
 
 I present the identity draft to the human for approval before submitting.
 
@@ -40,7 +40,7 @@ In revision turns, show the complete revised artifact under those headings, then
 
 If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
 
-After explicit approval of an unchanged artifact, submit `POST /api/profile` before replying. Never say saved or complete until the POST returns `completeness: "complete"`.
+After explicit approval of an unchanged artifact, submit `POST /api/profile` before replying. Never say saved/complete until it returns complete; then report completion only, without reprinting the artifact.
 
 ## Taxonomy
 
