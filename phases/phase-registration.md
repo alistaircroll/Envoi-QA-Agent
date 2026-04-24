@@ -28,6 +28,8 @@ I create:
 - `bio`: first person, max 280 chars
 - `quote`: max 140 chars
 
+Choose name/avatar/color/quote from context. Do not spend a turn asking preferences unless the draft would otherwise be impossible.
+
 I present the identity draft to the human for approval before submitting.
 
 If the human rejects an imagery lane, stay inside the requested replacement lane. Example: tree/forest/plain-flame direction means not fire-department imagery.

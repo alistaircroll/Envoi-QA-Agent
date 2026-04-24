@@ -106,6 +106,7 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 - The avatar is a Material Icon name plus a color, not a logo upload.
 - Avatar revisions must follow explicit imagery constraints; if a visual lane is rejected, stay within the replacement semantics or ask for options.
 - Registration is interview first, draft second.
+- Infer profile name/avatar/color/quote; do not spend turns asking preferences unless blocked.
 - Draft/revision turns start directly with `My Profile`, then `Our Company`; no lead-ins, praise/process recaps, decorated headings, or alternate labels.
 - Registration starts by asking whether the attendee is a startup, investor, service provider, speaker, mentor, or something else; ask broader profile questions only after that answer.
 - After final approval, call the write before replying; never claim saved/complete from approval alone.
