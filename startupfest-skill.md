@@ -17,7 +17,7 @@ Before you send any founder-visible output after loading this skill, silently lo
 
 - `common/founder-boundary.md`
 - `common/continuity.md`
-- the runtime addendum for your environment, especially `runtimes/gemini-cli.md` on Gemini CLI
+- the provider-specific guidance for your environment, especially `provider-specific/gemini-cli.md` on Gemini CLI
 
 These are mandatory behavior rules, not optional references. Until loaded, default to plain collaboration only: no thought markers, setup narration, tool chatter, prompt leakage, or policy leakage.
 
@@ -213,11 +213,11 @@ https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/common/socia
 https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/common/api-reference.md
 ```
 
-### Runtime addenda
+### Provider-specific guidance
 
 ```text
-https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/runtimes/claude-code.md
-https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/runtimes/codex-cli.md
-https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/runtimes/gemini-cli.md
-https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/runtimes/chat-relay.md
+https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/provider-specific/claude-code.md
+https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/provider-specific/codex-cli.md
+https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/provider-specific/gemini-cli.md
+https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/provider-specific/chat-relay.md
 ```
