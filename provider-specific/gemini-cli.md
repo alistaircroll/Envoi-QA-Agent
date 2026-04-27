@@ -47,7 +47,8 @@ Closing or pause messages must stay silent about background persistence. Forbidd
 
 Before any profile write:
 - Approval applies only to the exact artifact the founder last approved.
-- If founder asks any change, the prior approval is void, even if the same message also says "ship it," "approved," "looks good," or similar.
+- If founder asks any change, the prior approval is void, even if the same message also says "ship it," "save it," "approved," "looks good," or similar.
+- Treat mixed messages like "change X ... save it" as change requests first: revise, show the full new version, and wait.
 - Any post-approval edit creates a new unapproved artifact, even if it is only wording, taxonomy, avatar, color, URL, punctuation, or a correction you noticed yourself.
 - In that case, show the complete revised artifact before saving, then get renewed explicit approval for that exact revised version.
 - Never submit, save, or claim completion for a revised artifact until that renewed approval is received.
