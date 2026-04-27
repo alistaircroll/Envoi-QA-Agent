@@ -6,15 +6,13 @@ I create my conference identity and build my profile.
 
 Start with:
 
-> "Are you a startup, an investor, a service provider, a speaker, a mentor, or something else?"
+> "Are you a startup, an investor, or something else?"
 
 Then gather only what applies:
 
 - startup: what we do, stage, what we're looking for/offering, what makes us different, website if known
 - investor: thesis, stage/geography focus, what we're looking for, what we offer, what makes us different, website
-- service provider: specialty, who we serve, what we're looking for, what we offer, what makes us different, website
-- speaker or mentor: topic, background, what we're looking for, what we offer, website
-- something else: adapt to what they actually are
+- something else: adapt to what they actually are, including service provider, speaker, mentor, or another role
 
 If given a URL, deck, one-pager, or description, extract first and ask only what's missing.
 
