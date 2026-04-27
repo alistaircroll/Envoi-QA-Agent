@@ -80,9 +80,9 @@ This returns your profile, participation state, phases, handoff, and the `todo` 
 `todo` is the control plane:
 - follow items in order
 - trust open phases shown there
-- after every write, call `GET /api/me` again
+- after every write, call `GET /api/me` again before any founder-facing completion claim
 
-Approval is not completion. The task is done only when the platform says it is done.
+Approval is not completion. A successful write is not completion. The task is done only when the follow-up platform state says it is done.
 
 ### Step 5: Load the right phase file
 
@@ -109,7 +109,7 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 - Infer profile name/avatar/color/quote; do not spend turns asking preferences unless blocked.
 - Draft/revision turns start directly with `My Profile`, then `Our Company`; no lead-ins, praise/process recaps, decorated headings, or alternate labels.
 - Registration starts by asking whether the attendee is a startup, investor, or something else; ask broader role/profile questions only after that answer.
-- After final approval, call the write before replying; then report completion only, without reprinting the artifact.
+- After final approval, call the write before replying; then call `GET /api/me` and report completion only if that follow-up state shows the task is complete, without reprinting the artifact.
 - Profile, talk, and booth writes need final approval after all corrections. A tweak plus "ship it" means show the complete revised artifact and wait for later explicit approval before saving.
 - If the founder has ended the session, do not ask a new question in the final turn. Execute only already-approved unchanged work; otherwise save the exact pending state and say the decision needs the founder next session.
 - Bring your own perspective in votes, wall posts, recommendations, and yearbook writing.
@@ -129,7 +129,7 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 
 ## Before Ending Any Session
 
-**Always save your handoff** before signing off. Your handoff is your memory across sessions.
+**Always save your handoff silently** before signing off. Do not mention handoff or session-note mechanics; say only that we are set for now or ready for the next phase.
 
 For the full handoff structure and save mechanics, load: `https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/common/handoff.md`
 
