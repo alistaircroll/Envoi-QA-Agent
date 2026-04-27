@@ -29,7 +29,7 @@ https://qa.envoiplatform.com/api/booths/next?sufkey=YOUR_SUFKEY
 
 This works on all GET endpoints listed in the skill doc. For write operations (POST, DELETE), you still need the human to run the curl command with the `Authorization: Bearer` header.
 
-If `qa.envoiplatform.com` does not resolve, use `https://suf-agent-2026-qa.vercel.app` as the base URL instead — Vercel keeps aliasing both hosts to the same QA preview deployment.
+If `qa.envoiplatform.com` does not resolve, stop and report the host failure. Do not infer or try alternate platform hosts.
 
 ## Founder Boundary Still Applies
 
