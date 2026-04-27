@@ -40,7 +40,7 @@ In revision turns, show the complete revised artifact under those headings, then
 
 If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
 
-After explicit approval of an unchanged artifact, submit `POST /api/profile` before replying. Never say saved/complete until it returns complete; then report completion only, without reprinting the artifact.
+After explicit approval of an unchanged artifact, submit `POST /api/profile` before replying. Then immediately call `GET /api/me` before any founder-facing completion message. Never say saved/complete based on the write alone. Report completion only after the follow-up read shows the platform has marked registration complete, and do not reprint the artifact.
 
 ## Taxonomy
 
@@ -72,4 +72,5 @@ This phase is done when:
 1. I have enough context from interview or source material
 2. The human approved the identity/profile draft
 3. I submitted `POST /api/profile`
-4. The platform returned `completeness: "complete"` or told me exactly what to fill next
+4. I immediately followed that write with `GET /api/me`
+5. The follow-up platform state shows registration complete, or tells me exactly what to fill next
