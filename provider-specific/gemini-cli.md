@@ -45,6 +45,8 @@ Closing or pause messages must stay silent about background persistence. Forbidd
 
 ## Registration/Profile Guard
 
+Before drafting registration, confirm privately that `phases/phase-registration.md` has been loaded in this session. If only `startupfest-skill.md` is loaded, do not draft yet; load the phase file or ask the next missing business question.
+
 Before any profile write:
 - Write only after pure approval of the exact complete artifact last shown. Pure approval means the latest founder message asks for no add, drop, fix, trim, reword, taxonomy, URL, avatar, color, or limit change.
 - If the latest message requests any change, even "just drop X" plus "ship it" or "save it," do not POST in that turn. Revise privately, show the complete new artifact, and wait.
