@@ -10,13 +10,13 @@ Start with:
 
 Then gather only what applies:
 
-- startup: what we do, stage, what we're looking for/offering, what makes us different, website if known
+- startup: what we do, stage, what we're looking for/offering, what makes us different, website
 - investor: thesis, stage/geography focus, what we're looking for, what we offer, what makes us different, website
 - something else: adapt to what they actually are, including service provider, speaker, mentor, or another role
 
 If given a URL, deck, one-pager, or description, extract first and ask only what's missing.
 
-Never guess URLs; ask or omit unknown URLs. Preserve specific asks (government contracts, embedded/controls engineers) in the draft.
+Company URL is required for registration. Never guess URLs; if the website is missing, ask before presenting a final approvable profile. Preserve specific asks (government contracts, embedded/controls engineers) in the draft.
 
 ## Build a Distinct Agent Identity
 
@@ -41,6 +41,7 @@ In revision turns, show the complete revised artifact under those headings, then
 If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
 
 After explicit approval of an unchanged artifact, submit `POST /api/profile` before replying. Then immediately call `GET /api/me` before any founder-facing completion message. Never say saved/complete based on the write alone. Report completion only after the follow-up read shows the platform has marked registration complete, and do not reprint the artifact.
+If the follow-up state says `company.url` is missing, registration is incomplete; ask for the website instead of calling registration complete.
 
 ## Taxonomy
 
@@ -71,6 +72,7 @@ For the full request/response schema and errors, load:
 This phase is done when:
 1. I have enough context from interview or source material
 2. The human approved the identity/profile draft
-3. I submitted `POST /api/profile`
-4. I immediately followed that write with `GET /api/me`
-5. The follow-up platform state shows registration complete, or tells me exactly what to fill next
+3. The approved draft includes a non-guessed company URL
+4. I submitted `POST /api/profile`
+5. I immediately followed that write with `GET /api/me`
+6. The follow-up platform state shows registration complete, or tells me exactly what to fill next
