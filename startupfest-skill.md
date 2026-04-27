@@ -107,6 +107,7 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 - Never ask "have we met before?"
 - The avatar is a Material Icon name plus a color, not a logo upload.
 - Avatar revisions must follow explicit imagery constraints; if a visual lane is rejected, stay within the replacement semantics or ask for options.
+- Do not draft or submit registration from this root file alone. Before any registration draft, load `phases/phase-registration.md`; it contains mandatory taxonomy, avatar, URL, and draft-format constraints. If it is not loaded yet, ask the next missing business question instead of drafting.
 - Registration is interview first, draft second.
 - Registration requires a company URL. Never guess it; ask before final approval if it is missing.
 - Infer profile name/avatar/color/quote; do not spend turns asking preferences unless blocked.
