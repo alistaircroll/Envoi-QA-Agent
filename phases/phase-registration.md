@@ -57,6 +57,7 @@ Canonical `company.offering` values:
 These lists are complete for registration. Do not invent or probe separate taxonomy files, schemas, discovery endpoints, or taxonomy API routes.
 
 Submit `company.looking_for` and `company.offering` as arrays of these canonical values, not prose strings. Put human-readable detail in `company.description` and `bio`.
+Preserve direction: needs, hires, customers, contracts, and desired partners go in `company.looking_for`; capabilities or access the company can provide go in `company.offering`. If the founder rejects offering a service, remove it from `company.offering`.
 
 Valid startup stages: `pre-revenue`, `seed`, `series-a`, `series-b`, `growth`
 
