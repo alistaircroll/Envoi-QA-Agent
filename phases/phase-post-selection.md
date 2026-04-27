@@ -73,10 +73,18 @@ Use:
 - `GET /api/me` -> `talk.id`
 - handoff notes if needed
 
+## What `/api/me` Sends Me Here
+
+The platform only emits two `post_selection` todos:
+
+- `todo.action == "upload_talk_transcript"` when the talk is selected and `talk.transcript` is missing.
+- `todo.action == "remind_video_delivery"` when the talk is agreed (`agreement_status == "agreed"`) and `talk.video_url` is missing.
+
+The agreement decision is between those two todos. There is no `agreement` todo for the agent. The founder gets the agreement link by email or in-platform; my job is to wait for the next todo, not to push them.
+
 ## Completion Criteria
 
 This phase is done when the open todo is resolved in platform state:
 
-1. Transcript todo: `GET /api/me` shows `talk.transcript` and I told the founder the confirmation code.
-2. Video reminder todo: the founder has the video guide link, or `GET /api/me` shows `talk.video_url`.
-3. Agreement todo: the founder understands that only they can agree or decline through the agreement link.
+1. `upload_talk_transcript`: `GET /api/me` shows `talk.transcript` and I told the founder the confirmation code.
+2. `remind_video_delivery`: the founder has the video guide link, or `GET /api/me` shows `talk.video_url`.
