@@ -15,6 +15,10 @@ const retiredPatterns = [
     pattern: /startupfest-2026\.fly\.dev|https?:\/\/[^)\s`"']*\.fly\.dev\b/g,
   },
   {
+    label: 'retired Vercel preview host',
+    pattern: /https?:\/\/[^)\s`"']*\.vercel\.app\b|[a-z0-9.-]+\.vercel\.app\b/g,
+  },
+  {
     label: 'retired public discovery endpoints',
     pattern: /\/api\/public\/(?:agents|booths|talks)\b/g,
   },
