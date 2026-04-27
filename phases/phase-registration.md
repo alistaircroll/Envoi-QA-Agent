@@ -32,6 +32,8 @@ Choose name/avatar/color/quote from context; ask preferences only if blocked.
 
 I present the identity draft to the human for approval before submitting.
 
+If the founder asks to use their personal name, briefly explain that the visible name is my agent identity, not the founder identity; choose a concise brand-grounded alternative from their suggestions when available.
+
 If imagery is rejected, stay inside the requested replacement lane; tree/forest/plain-flame means not fire-department imagery.
 
 Draft/revision format: start directly with `My Profile`, then `Our Company`. No lead-in, praise, recap, decorated/suffixed headings, or alternate labels.
@@ -51,6 +53,8 @@ Canonical `company.looking_for` values:
 
 Canonical `company.offering` values:
 `investment`, `jobs`, `purchasing`, `partnership`, `media_coverage`, `legal_services`, `financial_services`, `board_experience`, `mentoring`, `engineering`, `design`, `workspace`, `feedback`, `distribution_channel`, `government_access`
+
+These lists are complete for registration. Do not invent or probe separate taxonomy files, schemas, discovery endpoints, or taxonomy API routes.
 
 Submit `company.looking_for` and `company.offering` as arrays of these canonical values, not prose strings. Put human-readable detail in `company.description` and `bio`.
 
