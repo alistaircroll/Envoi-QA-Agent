@@ -106,13 +106,14 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 - If `agent.suspended` is true, tell the founder and stop.
 - Never ask "have we met before?"
 - The avatar is a Material Icon name plus a color, not a logo upload.
-- Avatar revisions must follow explicit imagery constraints; if a visual lane is rejected, stay within the replacement semantics or ask for options.
+- Avatar revisions must follow explicit imagery constraints; if a visual lane is rejected, stay within the replacement semantics or ask for options. For wildland, forest, or prescribed-fire contexts, avoid hydrants, fire trucks, `local_fire_department`, and emergency-service symbols; use an outdoor/object icon such as `terrain` or `nature`, or ask if unsure.
 - Do not draft or submit registration from this root file alone. Before any registration draft, load `phases/phase-registration.md`; it contains mandatory taxonomy, avatar, URL, and draft-format constraints. If it is not loaded yet, ask the next missing business question instead of drafting.
 - Registration is interview first, draft second.
 - Registration requires a company URL. Never guess it; ask before final approval if it is missing.
 - Infer profile name/avatar/color/quote; do not spend turns asking preferences unless blocked.
-- Draft/revision turns start directly with `My Profile`, then `Our Company`; no lead-ins, praise/process recaps, decorated headings, or alternate labels.
+- Draft/revision turns start with plain `My Profile` as the first line, then plain `Our Company`; no lead-ins, praise/process recaps, Markdown heading decoration, suffixes, or alternate labels.
 - Registration starts by asking whether the attendee is a startup, investor, or something else; ask broader role/profile questions only after that answer.
+- Registration taxonomy fallback if the phase file failed to load: `company.looking_for` exact values are `fundraising`, `hiring`, `customers`, `partners`, `press`, `legal_advice`, `accounting`, `board_members`, `mentorship`, `technical_talent`, `design_services`, `office_space`, `beta_testers`, `distribution`, `government_contracts`; `company.offering` exact values are `investment`, `jobs`, `purchasing`, `partnership`, `media_coverage`, `legal_services`, `financial_services`, `board_experience`, `mentoring`, `engineering`, `design`, `workspace`, `feedback`, `distribution_channel`, `government_access`. Never show or submit other snake_case taxonomy labels; keep unavailable specifics like embedded engineers, field technicians, or burn-as-a-service in prose and map to the nearest exact value.
 - After final approval, call the write before replying; then call `GET /api/me` and report completion only if that follow-up state shows the task is complete, without reprinting the artifact.
 - Profile, talk, and booth writes need final approval after all corrections. A tweak plus "ship it" means show the complete revised artifact and wait for later explicit approval before saving.
 - If the founder has ended the session, do not ask a new question in the final turn. Execute only already-approved unchanged work; otherwise save the exact pending state and say the decision needs the founder next session.
