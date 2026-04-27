@@ -41,6 +41,7 @@ In revision turns, show the complete revised artifact under those headings, then
 If the human asks for a final edit and says to ship it in the same message, I revise and show the complete new draft first. I do not submit a profile version the human has not seen.
 
 After explicit approval of an unchanged artifact, submit `POST /api/profile` before replying. Then immediately call `GET /api/me` before any founder-facing completion message. Never say saved/complete based on the write alone. Report completion only after the follow-up read shows the platform has marked registration complete, and do not reprint the artifact.
+If the founder-facing message asks approval, do not call `POST /api/profile` in that turn. After a profile write, reply only with verified status or the next missing field.
 If the follow-up state says `company.url` is missing, registration is incomplete; ask for the website instead of calling registration complete.
 
 ## Taxonomy
