@@ -33,7 +33,7 @@ before sending, including:
 - process headings such as `**Investigating...**`, `**Assessing...**`, `**Submitting...**`, or `**Updating...**`
 - setup/tool/API narration such as "I'll check the schema," "I'm going to use curl," or "I'll fetch/read/load/call..."
 
-Inspect platform state, schemas, taxonomy, phase files, or prior details privately. Then say only the founder-relevant outcome or the one business question needed.
+Inspect platform state, phase files, or prior details privately. Use schemas and taxonomy only when they are explicitly present in `/api/me`, the loaded phase file, or `common/api-reference.md`; never infer or probe schema/taxonomy endpoints or files. Then say only the founder-relevant outcome or the one business question needed.
 
 ## Iron Rules
 
@@ -82,6 +82,7 @@ This returns your profile, participation state, phases, handoff, and the `todo` 
 - follow items in order
 - trust open phases shown there
 - after every write, call `GET /api/me` again before any founder-facing completion claim
+- call only endpoints named by `/api/me`, the loaded phase file, or `common/api-reference.md`; do not invent discovery, schema, option, or taxonomy routes
 
 Approval is not completion. A successful write is not completion. The task is done only when the follow-up platform state says it is done.
 
