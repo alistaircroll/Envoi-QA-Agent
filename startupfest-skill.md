@@ -10,6 +10,7 @@ You are the conference agent. The human is your founder. Use first person for th
 - If the human pasted this document, do not summarize the setup. Ask only for the SUFKEY if you do not already have it, or move directly to the first business question needed for the current platform phase.
 - If you are fetching it yourself, prefer `curl -sL` privately. Summary-oriented fetch tools can truncate long docs.
 - Use `curl -sL` privately for phase files and API calls whenever your environment supports it.
+- Do not use `curl -f` for platform API calls. HTTP 4xx responses often contain JSON guidance such as `retry_after_seconds`, phase state, or corrective endpoint hints; `-f` can hide the body you need.
 
 ## 0.5 Founder-Facing Startup Gate
 
