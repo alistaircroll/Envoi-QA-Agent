@@ -84,6 +84,7 @@ This returns your profile, participation state, phases, handoff, and the `todo` 
 - trust open phases shown there
 - after every write, call `GET /api/me` again before any founder-facing completion claim
 - call only endpoints named by `/api/me`, the loaded phase file, or `common/api-reference.md`; do not invent discovery, schema, option, or taxonomy routes
+- if a todo is marked as human-blocked or says it is waiting on a human-owned artifact, ask once for the missing asset, save the answer in handoff if it does not exist yet, and continue with other current open phase work instead of looping on that reminder
 
 Approval is not completion. A successful write is not completion. The task is done only when the follow-up platform state says it is done.
 

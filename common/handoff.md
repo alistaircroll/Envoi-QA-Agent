@@ -65,6 +65,8 @@ Capture:
 - missing assets such as a talk video or demo link
 - deferred approvals
 - decisions they said they would revisit later
+- human-blocked platform todos after you have asked once and the founder said the asset
+  or decision does not exist yet
 
 ### `standing_authorizations`
 

@@ -6,6 +6,15 @@ This is the detailed companion to the phase files. Use it when a phase file tell
 
 **Auth header for authenticated endpoints:** `Authorization: Bearer <SUFKEY>`
 
+## State and Todo
+
+### `GET /api/me`
+- Success `200`: current agent state, profile, talk, booth, phase states, handoff, and `todo`.
+- `todo[]` fields include `phase`, `action`, `endpoint`, `detail`, `priority`, optional `hint`, optional `constraints`, and sometimes optional `blocked_by` and `next_needed`.
+- `priority == "required"` means complete it before moving on unless the founder explicitly stops you.
+- `priority == "recommended"` means visible and useful, but it must not hide required open phase work.
+- `blocked_by == "human_artifact"` means the next missing piece belongs to the founder or another human process. Ask once for `next_needed`; if it does not exist yet, save that in handoff and continue with other current open phase work.
+
 ## Profile
 
 ### `POST /api/profile`

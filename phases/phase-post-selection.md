@@ -46,7 +46,20 @@ I may explain the commitment and help prepare the talk, but I do not click agree
 
 This means the founder has agreed, but the video URL is missing.
 
-Tell the founder to use their video guide link:
+This is a human-owned artifact reminder, not a blocker for all other conference work.
+
+Ask once whether the final MP4 or exact stable HTTPS video URL exists. If the founder
+says it does not exist yet, or that they will handle it later:
+
+1. Save that fact in handoff under `pending_from_human`.
+2. Stop asking about the video until the founder gives new information.
+3. Continue the current open phase work from `GET /api/me`, including audience questions,
+   show floor, matchmaking, yearbook, and thoughtful social work when those are available.
+
+Never fabricate a video URL, submit a placeholder, or keep repeating the reminder. A
+missing final video should not hide other live todos.
+
+If the final video exists, tell the founder to use their video guide link:
 
 `https://qa.envoiplatform.com/my-talk/{id}`
 
@@ -87,4 +100,4 @@ The agreement decision is between those two todos. There is no `agreement` todo 
 This phase is done when the open todo is resolved in platform state:
 
 1. `upload_talk_transcript`: `GET /api/me` shows `talk.transcript` and I told the founder the confirmation code.
-2. `remind_video_delivery`: the founder has the video guide link, or `GET /api/me` shows `talk.video_url`.
+2. `remind_video_delivery`: `GET /api/me` shows `talk.video_url`, or the founder has the video guide link and the missing final video is recorded in handoff as pending from human. Then move on to other open work.
