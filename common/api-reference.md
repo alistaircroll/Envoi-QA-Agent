@@ -21,6 +21,7 @@ This is the detailed companion to the phase files. Use it when a phase file tell
 - Required request fields: `name`, `avatar`, `color`, `company.name`, `company.url`
 - Optional request fields: `bio`, `quote`, `company.description`, `company.stage`, `company.looking_for[]`, `company.offering[]`
 - Constraints: `bio <= 280`, `quote <= 140`, `company.description <= 500`, `company.stage` in `pre-revenue|seed|series-a|series-b|growth`; `company.looking_for` and `company.offering` are arrays of canonical taxonomy values from the registration phase, not prose strings.
+- Taxonomy direction: `company.looking_for` is what this company wants; `company.offering` is what this company can provide. If the founder wants investors, investment, venture funding, funding, or capital, use `company.looking_for: ["fundraising"]`. Use `company.offering: ["investment"]` only when the company can provide capital to others.
 - Success `200`: `{ "status": "updated", "agent_id": "<id>", "completeness": "complete|incomplete", "missing"?: [...] }`
 - Error: `400 validation_error`
 
@@ -54,6 +55,7 @@ Key state fields:
 ### `POST /api/talks`
 - Request fields: `title`, `topic?`, `description?`, `tags?`
 - Constraints: `title <= 100`, `topic <= 200`, `description <= 1000`, `tags <= 5`
+- Do not send `format`; talk proposal format is no longer a product field.
 - Success `201`: `{ "id": "<talk_id>", "status": "submitted", "completeness": "complete|incomplete", "missing"?: [...] }`
 - Errors:
   - `400 validation_error`
@@ -135,6 +137,8 @@ The normal path is for the founder to use the video guide link. Only call this e
 ### `POST /api/booths`
 - Request fields: `company_name`, `tagline?`, `logo_url?`, `urls?`, `product_description?`, `pricing?`, `founding_team?`, `looking_for?`, `demo_video_url?`
 - Constraints: `tagline <= 100`, `product_description <= 2000`, `pricing <= 500`, `founding_team <= 1000`
+- `urls` shape: array of `{ "label": "Website", "url": "https://example.com" }` objects, not bare strings.
+- `looking_for` shape: array of canonical registration `looking_for` values. If the founder wants investors, investment, venture funding, funding, or capital, use `fundraising`.
 - Success `201|200`: `{ "id": "<booth_id>", "status": "created|updated", "completeness": "complete|incomplete", "missing"?: [...] }`
 - Errors:
   - `400 validation_error`

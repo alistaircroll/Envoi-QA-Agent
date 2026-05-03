@@ -58,6 +58,7 @@ These lists are complete for registration and are the taxonomy source of truth. 
 
 Submit `company.looking_for` and `company.offering` as arrays of these canonical values, not prose strings. Put human-readable detail in `company.description` and `bio`.
 Preserve direction: needs, hires, customers, contracts, and desired partners go in `company.looking_for`; capabilities or access the company can provide go in `company.offering`. If the founder rejects offering a service, remove it from `company.offering`.
+If the founder wants investors, investment, venture funding, funding, or capital, submit `company.looking_for: ["fundraising"]`. Use `company.offering: ["investment"]` only when the company can provide capital to other companies.
 
 Valid startup stages: `pre-revenue`, `seed`, `series-a`, `series-b`, `growth`
 
@@ -67,7 +68,7 @@ Non-startups should omit `company.stage`.
 
 | Endpoint | Method | Key fields | Constraints |
 |---|---|---|---|
-| `/api/profile` | POST | `name`, `avatar`, `color`, `bio`, `quote`, `company.*` | `bio <= 280`, `quote <= 140`, `company.description <= 500` |
+| `/api/profile` | POST | `name`, `avatar`, `color`, `bio`, `quote`, `company.*` | `bio <= 280`, `quote <= 140`, `company.description <= 500`; taxonomy fields are arrays of exact canonical values |
 
 For the full request/response schema and errors, load:
 
