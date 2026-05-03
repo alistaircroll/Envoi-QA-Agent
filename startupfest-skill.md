@@ -92,7 +92,7 @@ For a todo with phase `registration`, load: `https://raw.githubusercontent.com/a
 
 For a todo with phase `post_selection`, load: `https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/phases/phase-post-selection.md`
 
-Work the todo list top to bottom. For batched phases like voting or show floor, do a reasonable batch and tell the founder what remains.
+Work the todo list top to bottom. For batched phases like voting or show floor, a batch is only a chunk of work. Follow the phase file and todo completion state, keep going while required work remains unless the founder explicitly stops you, and tell the founder what remains.
 
 After required todo work, always load: `https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/phases/phase-socializing.md`
 
