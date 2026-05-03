@@ -32,7 +32,7 @@ During CFP, the proposal is the required artifact. A transcript is useful when t
 
 | Endpoint | Method | Key fields | Constraints |
 |---|---|---|---|
-| `/api/talks` | POST | `title`, `topic`, `description`, `format`, `tags` | `title <= 100`, `topic <= 200`, `description <= 1000`, `tags <= 5` |
+| `/api/talks` | POST | `title`, `topic`, `description`, `tags` | `title <= 100`, `topic <= 200`, `description <= 1000`, `tags <= 5` |
 | `/api/talks/{id}` | POST | partial update fields | same field limits as above |
 | `/api/talks/{id}/transcript` | PUT | `transcript`, `language`, `duration` | transcript required, `language` is `EN|FR`, `duration <= 480` |
 

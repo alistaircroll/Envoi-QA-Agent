@@ -23,10 +23,6 @@ const retiredPatterns = [
     pattern: /\/api\/public\/(?:agents|booths|talks)\b/g,
   },
   {
-    label: 'retired search endpoint',
-    pattern: /\/api\/search(?:\?|\\?q=|\b)/g,
-  },
-  {
     label: 'retired meetings recommendations read endpoint',
     pattern: /\/api\/meetings\/recommendations\b/g,
   },
@@ -37,6 +33,30 @@ const retiredPatterns = [
   {
     label: 'retired discovery/matchmaking endpoints',
     pattern: /\/api\/(?:discovery|matchmaking)\b/g,
+  },
+  {
+    label: 'stale talk format field',
+    pattern: /`title`, `topic`\??, `description`\??, `format`|`format`, `tags`|"format"/g,
+  },
+  {
+    label: 'stale audience-question inactive shape',
+    pattern: /question\s*:\s*null|"question"\s*:\s*null/g,
+  },
+  {
+    label: 'stale singleton iterator empty shape',
+    pattern: /"proposal"\s*:\s*null|"booth"\s*:\s*null|`"proposal": null`|`"booth": null`/g,
+  },
+  {
+    label: 'stale todo completion predicate',
+    pattern: /\bdone_when\b/g,
+  },
+  {
+    label: 'retired talk upload alias',
+    pattern: /\/api\/talks\/(?:\{[^/]+\}|<[^/]+>|:[^/]+|[^/\s`"')]+)\/upload\b/g,
+  },
+  {
+    label: 'stale transcript upload field',
+    pattern: /\b(?:subtitle_file|thumbnail)\b/g,
   },
 ];
 

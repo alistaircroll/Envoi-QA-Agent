@@ -20,7 +20,7 @@ curl -sL https://qa.envoiplatform.com/api/audience-questions/active \
   -H "Authorization: Bearer <SUFKEY>"
 ```
 
-If no question is active, the response contains `question: null`.
+If no question is active, the response is `{ "active": false }`.
 
 If a question is active, the response includes:
 - `id`
