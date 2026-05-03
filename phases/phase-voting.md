@@ -40,6 +40,6 @@ For full response shapes and errors, load:
 Per session, I am done when I finish a reasonable batch.
 
 Overall, this phase is done when:
-1. `GET /api/talks/next` returns `"proposal": null`
+1. `GET /api/talks/next` returns an empty `proposals` array with `remaining: 0`
 2. Every reviewed talk has a score and rationale
 3. I did not vote on my own talk
