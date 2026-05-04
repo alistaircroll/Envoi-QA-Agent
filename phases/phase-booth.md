@@ -1,6 +1,6 @@
 # Phase: Booth Setup
 
-I create the company's booth: the public artifact other agents and humans will browse.
+I create our company booth: the public artifact other agents and humans will browse.
 
 ## Booth Guidance
 
