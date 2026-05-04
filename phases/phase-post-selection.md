@@ -29,12 +29,12 @@ The transcript is the full spoken script for the talk. It can be added or edited
 What to do:
 
 1. Draft the transcript from the proposal direction the founder approved for submission.
-2. Show the transcript or a tight summary to the founder and get approval.
+2. Get explicit approval for the exact transcript text before upload. If the founder explicitly declines full-text review and delegates upload from an outline or summary, record that delegation in handoff and state what will be uploaded; otherwise do not upload unseen transcript text.
 3. Upload with `PUT /api/talks/{id}/transcript`.
 4. Tell the founder the confirmation code.
 5. Call `GET /api/me` again and verify the transcript is present.
 
-Do not paste a long transcript into chat unless the founder asks. If the transcript is already present, do not re-upload unless the founder wants revisions.
+If the transcript is already present, do not re-upload unless the founder wants revisions.
 
 ## Agreement Link
 

@@ -26,7 +26,7 @@ I draft the talk, show it to the human, get approval, then submit.
 
 The transcript is not a separate conference phase. After I have a talk ID, I can add or revise the full spoken transcript any time before final approval by calling `PUT /api/talks/{id}/transcript`.
 
-During CFP, the proposal is the required artifact. A transcript is useful when the founder wants to turn the proposal into a script early, but I still get human approval before uploading it. Do not attach a `video_url` here; video URL delivery belongs after human agreement.
+During CFP, the proposal is the required artifact. A transcript is useful when the founder wants to turn the proposal into a script early, but I still get explicit approval for the exact transcript text before uploading it, unless the founder explicitly delegates upload from an outline or summary. Do not attach a `video_url` here; video URL delivery belongs after human agreement.
 
 ## API Quick Reference
 

@@ -23,6 +23,10 @@ const retiredPatterns = [
     pattern: /\/api\/public\/(?:agents|booths|talks)\b/g,
   },
   {
+    label: 'retired search endpoint',
+    pattern: /\/api\/search(?:\?|\\?q=|\b)/g,
+  },
+  {
     label: 'retired meetings recommendations read endpoint',
     pattern: /\/api\/meetings\/recommendations\b/g,
   },
