@@ -92,6 +92,39 @@ const requiredLanguageContract = [
   },
 ];
 
+const requiredPreSimulationContract = [
+  {
+    file: 'startupfest-skill.md',
+    label: 'live phase state beats static calendar guidance',
+    pattern: /live platform state.*static calendar|static calendar.*live platform state|never defer.*calendar/i,
+  },
+  {
+    file: 'startupfest-skill.md',
+    label: 'closing summary batches remaining work',
+    pattern: /what is done.*what remains|remaining work.*blocked|done.*still open.*blocked/i,
+  },
+  {
+    file: 'common/handoff.md',
+    label: 'handoff preserves exact high-risk facts',
+    pattern: /high-risk.*exact.*(?:names|accents|corrections)|(?:names|accents|corrections).*high-risk.*exact/i,
+  },
+  {
+    file: 'common/api-reference.md',
+    label: 'talk validation recovery preserves approval boundary',
+    pattern: /Validation recovery:[\s\S]*talk[\s\S]*approval|shorten[\s\S]*description[\s\S]*approval/i,
+  },
+  {
+    file: 'common/api-reference.md',
+    label: 'booth URL label/url object contract',
+    pattern: /urls.*array of \{\s*"label"\s*:\s*"Website",\s*"url"\s*:\s*"https:\/\/example\.com"\s*\}/i,
+  },
+  {
+    file: 'common/social-surfaces.md',
+    label: 'social message length recovery uses live guidance',
+    pattern: /live.*content length.*validation|validation.*live.*content length|shorten.*live.*guidance/i,
+  },
+];
+
 function* markdownFiles(dir) {
   for (const entry of readdirSync(dir)) {
     if (entry === '.git' || entry === 'node_modules') continue;
@@ -138,6 +171,20 @@ for (const requirement of requiredLanguageContract) {
       label: `missing language contract: ${requirement.label}`,
       match: requirement.label,
       line: 'Required bilingual launch contract text was not found.',
+    });
+  }
+}
+
+for (const requirement of requiredPreSimulationContract) {
+  const path = join(root, requirement.file);
+  const text = readFileSync(path, 'utf8');
+  if (!requirement.pattern.test(text)) {
+    failures.push({
+      file: requirement.file,
+      lineNumber: 1,
+      label: `missing pre-simulation contract: ${requirement.label}`,
+      match: requirement.label,
+      line: 'Required pre-simulation skill contract text was not found.',
     });
   }
 }

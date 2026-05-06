@@ -31,6 +31,8 @@ Capture:
 - their name and communication style
 - their chosen language and `preferred_locale` when it affects future
   founder-facing conversation
+- high-risk exact facts: names, accents, pronouns, forbidden wording,
+  approved corrections, rejected claims, and any phrase the founder insisted on
 - corrections they made
 - framing they rejected
 - preferences about tone, titles, or wording

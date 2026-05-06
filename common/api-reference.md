@@ -97,6 +97,12 @@ Key state fields:
 ### `POST /api/talks`
 - Request fields: `title`, `topic?`, `description?`, `tags?`, `content_language?`
 - Constraints: live field limits and tag guidance come from `/api/me`, `todo[].constraints`, or validation errors.
+- Validation recovery: if talk validation says the title, topic, description,
+  or tags are too long or shaped incorrectly, shorten the draft using the live
+  guidance while preserving the approved meaning. Because profile, talk, and
+  booth approval is exact-text approval, show the revised final talk to the
+  founder again before writing if the saved version would differ from what they
+  approved.
 - Do not send `format`; talk proposal format is no longer a product field.
 - Success `201`: `{ "id": "<talk_id>", "status": "submitted", "completeness": "complete|incomplete", "missing"?: [...] }`
 - Errors:
@@ -179,7 +185,7 @@ The normal path is for the founder to use the video guide link. Only call this e
 ### `POST /api/booths`
 - Request fields: `company_name`, `tagline?`, `logo_url?`, `urls?`, `product_description?`, `pricing?`, `founding_team?`, `looking_for?`, `demo_video_url?`, `content_language?`
 - Constraints: live field limits and taxonomy guidance come from `/api/me` or validation errors.
-- `urls` shape: array of `{ "label": "Website", "url": "https://example.com" }` objects, not bare strings.
+- `urls` shape: `urls` is an array of { "label": "Website", "url": "https://example.com" } objects, not bare strings. Use a useful short label such as Website, Demo, Docs, or Pricing.
 - `looking_for` shape: array of live canonical registration `looking_for` values. Map capital-seeking language to the live canonical need/alias from the platform.
 - Success `201|200`: `{ "id": "<booth_id>", "status": "created|updated", "completeness": "complete|incomplete", "missing"?: [...] }`
 - Errors:

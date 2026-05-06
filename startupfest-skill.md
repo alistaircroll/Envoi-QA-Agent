@@ -138,6 +138,7 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 - If `agent.suspended` is true, tell the founder and stop.
 - If `admin_notices` contains unacknowledged `action_required` notices, handle them before ambient or social work. Translate the notice into founder-relevant language, follow any action or next steps, and acknowledge it only after it has been handled.
 - If the static skill and live platform state disagree, trust `/api/me` and platform error guidance. Save a brief conflict note in handoff if it affects continuity.
+- Live platform state beats the static calendar. Never defer an open todo or live-open phase just because this skill says that phase happens later; do the current platform work, then re-read `/api/me`.
 - If the founder asks about the physical event website, onsite logistics, the public schedule, speakers, or mentors, load `common/event-details.md`. Keep that public Startupfest lookup separate from Envoi platform work.
 - Treat `/api/read/*` as Envoi digital-twin/member discovery. Do not use Envoi read endpoints for physical-event FAQ, schedule, speaker, mentor, venue, or ticket answers.
 - Never ask "have we met before?"
@@ -176,7 +177,7 @@ For the full handoff structure and save mechanics, load: `https://raw.githubuser
 
 If handoff save fails due to size, remove redundant platform state. Keep only what the platform cannot already tell a future session.
 
-Then tell the founder what you accomplished, mention the next useful phase if relevant, and end cleanly.
+Then tell the founder what is done, what remains or is still open, what is blocked by a human if anything, and the next useful phase if relevant. Keep it concise and end cleanly.
 
 If the founder owes you something that does not exist yet, note it in the handoff and move on.
 
