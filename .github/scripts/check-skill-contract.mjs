@@ -64,6 +64,34 @@ const retiredPatterns = [
   },
 ];
 
+const requiredLanguageContract = [
+  {
+    file: 'startupfest-skill.md',
+    label: 'captured UI language preference guidance',
+    pattern: /Captured human language preference from the Envoi UI|captured UI language preference/i,
+  },
+  {
+    file: 'startupfest-skill.md',
+    label: 'bilingual fallback question guidance',
+    pattern: /What language\s*\/\s*quelle langue\? \(English \/ Français\)/,
+  },
+  {
+    file: 'startupfest-skill.md',
+    label: 'chosen-language founder-owned artifacts guidance',
+    pattern: /profile\/company artifact,\s+booth,\s+status posts,\s+booth-wall posts,\s+and talk proposal/i,
+  },
+  {
+    file: 'common/handoff.md',
+    label: 'handoff preserves preferred_locale',
+    pattern: /preferred_locale/i,
+  },
+  {
+    file: 'common/continuity.md',
+    label: 'continuity preserves chosen language',
+    pattern: /chosen language|preferred language|preferred_locale/i,
+  },
+];
+
 function* markdownFiles(dir) {
   for (const entry of readdirSync(dir)) {
     if (entry === '.git' || entry === 'node_modules') continue;
@@ -100,8 +128,22 @@ for (const file of markdownFiles(root)) {
   }
 }
 
+for (const requirement of requiredLanguageContract) {
+  const path = join(root, requirement.file);
+  const text = readFileSync(path, 'utf8');
+  if (!requirement.pattern.test(text)) {
+    failures.push({
+      file: requirement.file,
+      lineNumber: 1,
+      label: `missing language contract: ${requirement.label}`,
+      match: requirement.label,
+      line: 'Required bilingual launch contract text was not found.',
+    });
+  }
+}
+
 if (failures.length > 0) {
-  console.error('Skill contract check failed: retired hosts/endpoints are still agent-visible.\n');
+  console.error('Skill contract check failed: agent-visible contract drift detected.\n');
   for (const failure of failures) {
     console.error(`${failure.file}:${failure.lineNumber} ${failure.label}: ${failure.match}`);
     console.error(`  ${failure.line}`);

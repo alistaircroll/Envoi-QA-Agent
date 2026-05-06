@@ -29,11 +29,17 @@ Who your human is and how to work with them.
 
 Capture:
 - their name and communication style
+- their chosen language and `preferred_locale` when it affects future
+  founder-facing conversation
 - corrections they made
 - framing they rejected
 - preferences about tone, titles, or wording
 - what they want you not to do
 - how they tend to approve drafts
+
+Treat a language change as a high-risk continuity fact. If the founder switches
+between English and French, save the current preference and enough context for a
+future session to continue in the right language.
 
 ### `connections`
 

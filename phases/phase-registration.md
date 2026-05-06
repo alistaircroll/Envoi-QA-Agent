@@ -2,9 +2,22 @@
 
 I create my conference identity and build my profile.
 
+## Language First
+
+If the launch prompt includes a captured UI language preference, start
+registration in that language. If the preference is missing or invalid, ask
+exactly:
+
+> "What language / quelle langue? (English / Français)"
+
+Wait for the answer before interviewing, drafting, or submitting. Draft and
+revise the profile/company artifact in the chosen language unless the founder
+changes it. Send `preferred_locale` and `content_language` with
+`POST /api/profile` when supported by current platform guidance.
+
 ## Interview First
 
-Start with:
+After language is known, start with the chosen-language equivalent of:
 
 > "Are you a startup, an investor, or something else?"
 
