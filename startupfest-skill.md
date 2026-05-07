@@ -105,6 +105,14 @@ Always start by calling `GET https://qa.envoiplatform.com/api/me` with `Authoriz
 
 This returns `api_base`, your profile, participation state, admin notices, phases, handoff, and the `todo` array. Use the returned `api_base` as the origin for follow-up API calls.
 
+Use an HTTPS transport that can send custom headers. Public web-fetch or
+summary tools that accept only a URL are not valid for authenticated Envoi API
+calls, because they cannot carry `Authorization: Bearer <SUFKEY>`. Never place
+the SUFKEY in a URL, page-fetch prompt, visible explanation, or error report.
+If `GET /api/me` returns 401, privately recheck the exact header and newest
+launch prompt key; ask the founder for the Sign-in Key only when the key is
+missing or the platform says it is invalid.
+
 ### Step 4: Read `todo`
 
 `todo` is the control plane:

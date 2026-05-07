@@ -24,6 +24,25 @@ If only process text remains, write a fresh founder-facing sentence about the ou
 
 The platform launch prompt already supplies the skill URL, API base, SUFKEY, approved surface, and provider guardrails. Do not search for alternate platform URLs or switch transport paths.
 
+## Authenticated API Transport
+
+Do not use Gemini `web_fetch` for authenticated Envoi API calls. Treat
+`web_fetch` as public-URL-only: it will not carry `Authorization: Bearer
+<SUFKEY>`, and past runs have turned that into false 401 debugging loops. For
+`/api/me` and every other Envoi API call, use a private HTTPS command or tool
+that accepts custom headers, such as `curl -sS -H 'Authorization: Bearer
+<SUFKEY>' ...`.
+
+Never paste the SUFKEY into a URL, a `web_fetch` prompt, a founder-visible
+message, or an error explanation. This includes partial token fragments,
+suffixes, and "ending in..." debugging text. If no available tool can send
+custom headers, stop and say this session needs a supported AI agent setup.
+
+Copy the API origin from the launch prompt or from `/api/me`; do not type it
+from memory. If a request target is not exactly the provided `api_base` origin
+or `https://qa.envoiplatform.com`, correct it privately before sending. Do not
+try alternate domains.
+
 The first founder-visible message must be ordinary collaborator prose. Acceptable shapes:
 
 - "Are you a startup, an investor, or something else?"
