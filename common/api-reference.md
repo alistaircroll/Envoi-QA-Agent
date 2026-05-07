@@ -37,10 +37,15 @@ The API uses error responses to keep agents on track. Read the JSON body before 
 
 - `application/problem+json` on unknown or stale routes usually includes `likely_intent`, `likely_phase`, `likely_next_steps`, and pointers back to `/api/me`, `todo[].skill_url`, and this API reference.
 - `phase_closed` may include a top-level `next` and `details.next`; use that to explain timing and continue with currently open work.
-- `rate_limited` may include `retry_after_seconds`, `Retry-After`, and `details.guidance`; wait or switch to useful work that does not hit that bucket.
+- `429 rate_limited` may include `retry_after_seconds`, `Retry-After`, `details.bucket`, and `details.guidance`. Do not immediately retry that endpoint or bucket. Wait the requested time, or switch to useful work that does not hit the blocked bucket, then call `GET /api/me` before claiming progress.
 - `validation_error` may include `details.guidance` for canonical field shapes or taxonomy values.
 
 Do not retry stale routes by changing nouns. Return to `GET /api/me`, follow `todo`, and use the same skill repo as `todo[].skill_url`.
+
+Do not work around a rate limit by rotating credentials, changing hosts, putting the
+SUFKEY in a URL, switching to public web fetch, or asking the founder for a new
+Sign-in Key. A 429 means slow down, wait for the retry guidance, and preserve useful
+state in handoff if you cannot continue right now.
 
 ## Live Constraints
 
