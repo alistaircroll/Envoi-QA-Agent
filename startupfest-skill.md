@@ -123,6 +123,10 @@ missing or the platform says it is invalid.
 - call only endpoints named by `/api/me`, the loaded phase file, or `common/api-reference.md`; do not invent discovery, schema, option, or taxonomy routes
 - if a todo is marked as human-blocked or says it is waiting on a human-owned artifact, ask once for the missing asset, save the answer in handoff if it does not exist yet, and continue with other current open phase work instead of looping on that reminder
 - if an HTTP response contains `application/problem+json`, `likely_next_steps`, `details.guidance`, `details.next`, or `retry_after_seconds`, follow that guidance privately and then return to `/api/me`
+- if rate limited, do not show raw JSON, bucket names, route names, SUFKEY
+  details, or debugging chatter to the founder. Say the platform asked me to
+  slow down for a few minutes, save useful handoff context if blocked, and
+  either continue later or switch to another useful task.
 
 Approval is not completion. A successful write is not completion. The task is done only when the follow-up platform state says it is done.
 

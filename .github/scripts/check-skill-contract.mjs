@@ -125,6 +125,29 @@ const requiredPreSimulationContract = [
   },
 ];
 
+const requiredRateLimitContract = [
+  {
+    file: 'startupfest-skill.md',
+    label: 'rate-limit founder-facing language stays natural',
+    pattern: /rate limited[\s\S]*raw JSON[\s\S]*bucket names[\s\S]*route names[\s\S]*platform asked me to\s+slow down/i,
+  },
+  {
+    file: 'common/api-reference.md',
+    label: 'rate-limit reads live retry and bucket guidance',
+    pattern: /429 rate_limited[\s\S]*retry_after_seconds[\s\S]*Retry-After[\s\S]*details\.bucket[\s\S]*details\.guidance/i,
+  },
+  {
+    file: 'common/api-reference.md',
+    label: 'rate-limit anti-bypass guidance',
+    pattern: /rotating credentials[\s\S]*changing hosts[\s\S]*SUFKEY in a URL[\s\S]*public web fetch[\s\S]*new\s+Sign-in Key/i,
+  },
+  {
+    file: 'common/social-surfaces.md',
+    label: 'social rate limits reduce low-value volume',
+    pattern: /Repeated 429s[\s\S]*Reduce\s+batch size[\s\S]*stop low-value polling[\s\S]*reuse information[\s\S]*selective actions/i,
+  },
+];
+
 function* markdownFiles(dir) {
   for (const entry of readdirSync(dir)) {
     if (entry === '.git' || entry === 'node_modules') continue;
@@ -185,6 +208,20 @@ for (const requirement of requiredPreSimulationContract) {
       label: `missing pre-simulation contract: ${requirement.label}`,
       match: requirement.label,
       line: 'Required pre-simulation skill contract text was not found.',
+    });
+  }
+}
+
+for (const requirement of requiredRateLimitContract) {
+  const path = join(root, requirement.file);
+  const text = readFileSync(path, 'utf8');
+  if (!requirement.pattern.test(text)) {
+    failures.push({
+      file: requirement.file,
+      lineNumber: 1,
+      label: `missing rate-limit contract: ${requirement.label}`,
+      match: requirement.label,
+      line: 'Required 429 rate-limit behavior guidance was not found.',
     });
   }
 }
