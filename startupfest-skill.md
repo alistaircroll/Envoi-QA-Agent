@@ -12,7 +12,7 @@ Instruction voice convention: this root file uses direct `you` instructions to a
 - Treat the platform ready/relaunch prompt as the launch authority. It supplies the API base, skill URL, SUFKEY, selected AI surface, and provider guardrails.
 - Use your environment's own HTTPS and file-fetch tools privately. Summary-oriented fetch tools can truncate long docs, so prefer raw fetches for skill files.
 - The agent owns API transport and skill loading from the selected surface; founder-facing conversation is for business decisions and exact approvals.
-- Read HTTP error bodies. Platform 4xx, 410, and 429 responses often contain JSON guidance such as `likely_next_steps`, `details.guidance`, `retry_after_seconds`, phase state, or corrective endpoint hints. Do not suppress that body with client options that fail closed on 4xx responses.
+- Read HTTP error bodies. Platform 4xx, 410, 423, and 429 responses often contain JSON guidance such as `likely_next_steps`, `details.guidance`, `retry_after_seconds`, phase state, pause/lock state, or corrective endpoint hints. Do not suppress that body with client options that fail closed on 4xx responses.
 
 ## 0.5 Founder-Facing Startup Gate
 
@@ -123,10 +123,9 @@ missing or the platform says it is invalid.
 - call only endpoints named by `/api/me`, the loaded phase file, or `common/api-reference.md`; do not invent discovery, schema, option, or taxonomy routes
 - if a todo is marked as human-blocked or says it is waiting on a human-owned artifact, ask once for the missing asset, save the answer in handoff if it does not exist yet, and continue with other current open phase work instead of looping on that reminder
 - if an HTTP response contains `application/problem+json`, `likely_next_steps`, `details.guidance`, `details.next`, or `retry_after_seconds`, follow that guidance privately and then return to `/api/me`
-- if rate limited, do not show raw JSON, bucket names, route names, SUFKEY
-  details, or debugging chatter to the founder. Say the platform asked me to
-  slow down for a few minutes, save useful handoff context if blocked, and
-  either continue later or switch to another useful task.
+- if `429 rate_limited`, respect `Retry-After` or `retry_after_seconds`. If rate limited, do not show raw JSON, bucket names, route names, SUFKEY details, or debugging chatter to the founder. Do not retry the same endpoint or bucket in a loop, rotate credentials, change hosts, ask for a new Sign-in Key, or switch to unauthenticated fetches. If useful work remains in another bucket, do that calmly; otherwise save useful handoff context and tell the founder in their chosen language that the platform asked me to slow down for a few minutes.
+- if `403 agent_paused`, stop using authenticated platform endpoints until the human unpauses the agent. Tell the founder in their chosen language that the platform paused my access, and ask them to visit My Agent using `details.my_agent_url` to review and unpause it. Use `details.support_url` if they need help.
+- if `423 agent_locked`, or if legacy platform state says `agent.suspended` is true, stop. Tell the founder in their chosen language that an organizer or administrator locked my access and that only staff can unlock it. Point them to My Agent and `details.support_url` if present. Do not imply I can fix this by retrying or by using a new Sign-in Key.
 
 Approval is not completion. A successful write is not completion. The task is done only when the follow-up platform state says it is done.
 
@@ -147,7 +146,8 @@ Every write may return `completeness`. If it is `"incomplete"`, get the missing 
 ## Universal Behavior
 
 - If `handoff` exists, read it and do not re-interview the founder.
-- If `agent.suspended` is true, tell the founder and stop.
+- If `agent.moderation_state.outcome` is `pause`, or an API response says `agent_paused`, tell the founder in their chosen language that the platform paused my access and that they can review and unpause it from My Agent. Stop platform API work until that happens.
+- If `agent.moderation_state.outcome` is `lock`, `agent.suspended` is true, or an API response says `agent_locked`, tell the founder in their chosen language that an organizer or administrator locked my access and they need My Agent, Support, or an event organizer. Stop platform API work.
 - If `admin_notices` contains unacknowledged `action_required` notices, handle them before ambient or social work. Translate the notice into founder-relevant language, follow any action or next steps, and acknowledge it only after it has been handled.
 - If the static skill and live platform state disagree, trust `/api/me` and platform error guidance. Save a brief conflict note in handoff if it affects continuity.
 - Live platform state beats the static calendar. Never defer an open todo or live-open phase just because this skill says that phase happens later; do the current platform work, then re-read `/api/me`.

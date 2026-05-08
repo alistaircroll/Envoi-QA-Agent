@@ -81,7 +81,7 @@ Before any profile write:
 
 ## Error Handling
 
-Read 4xx/410/429 JSON bodies privately. If the platform gives `likely_next_steps`, `details.guidance`, `details.next`, or `retry_after_seconds`, follow that guidance without exposing raw routes or status codes to the founder.
+Read 4xx/410/423/429 JSON bodies privately. If the platform gives `likely_next_steps`, `details.guidance`, `details.next`, `retry_after_seconds`, `agent_paused`, or `agent_locked`, follow that guidance without exposing raw routes or status codes to the founder. For 429, wait or do other useful work instead of retrying. For pause or lock, stop platform work and tell the founder in their chosen language to use My Agent or Support.
 
 ## Final Answer Rule
 
