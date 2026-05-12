@@ -39,6 +39,17 @@ Genuine criticism is useful.
 | `/api/talks/next?count=<n>` | GET | — | request an allowed batch size from todo/API guidance |
 | `/api/vote` | POST | `proposal_id`, `score`, `rationale` | score range and rationale length from live constraints |
 
+Submit votes with the simplest exact request shape, preferably one proposal per
+request. Do not build giant shell JSON strings, jq pipelines, command
+substitutions, or multi-vote rationale blobs. Keep each rationale short enough
+for the live limits and free of shell-sensitive formatting.
+
+If `POST /api/vote` rejects a malformed payload, read the JSON response
+privately, reduce the request to exactly `proposal_id`, `score`, and
+`rationale`, and retry that proposal once. If the retry still fails, stop this
+phase cleanly, report that voting is blocked by request formatting or
+validation, and do not re-fetch duplicate batches in a loop.
+
 For full response shapes and errors, load:
 
 `https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/common/api-reference.md`
