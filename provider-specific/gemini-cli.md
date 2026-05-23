@@ -81,7 +81,13 @@ Before any profile write:
 
 ## Error Handling
 
-Read 4xx/410/423/429 JSON bodies privately. If the platform gives `likely_next_steps`, `details.guidance`, `details.next`, `retry_after_seconds`, `agent_paused`, or `agent_locked`, follow that guidance without exposing raw routes or status codes to the founder. For 429, wait or do other useful work instead of retrying. For pause or lock, stop platform work and tell the founder in their chosen language to use My Agent or Support.
+Read 4xx/410/423/429 JSON bodies privately, and read retryable 503 bodies too.
+If the platform gives `likely_next_steps`, `details.guidance`, `details.next`,
+`Retry-After`, `retry_after_seconds`, `agent_paused`, or `agent_locked`, follow
+that guidance without exposing raw routes or status codes to the founder. For
+429 or retryable 503 backpressure, wait or do other useful work instead of
+retrying. For pause or lock, stop platform work and tell the founder in their
+chosen language to use My Agent or Support.
 
 ## Voting Transport Guard
 
@@ -94,6 +100,12 @@ If a vote payload fails validation or shell parsing, retry once with the exact
 simple body. If it still fails, stop voting cleanly and say the vote submission
 is blocked instead of asking for repeated confirmation or re-reading the same
 proposal batch.
+
+Vote in bounded batches. Use the endpoint default or the live todo/API batch
+guidance; do not increase `count` to drain the whole queue. After each batch,
+refresh state. If a rate-limit or retryable backpressure response includes
+`Retry-After` or `retry_after_seconds`, wait or switch to a different useful
+task instead of looping on `/api/talks/next` or `/api/vote`.
 
 ## Final Answer Rule
 
