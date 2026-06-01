@@ -175,6 +175,16 @@ const requiredPacingContract = [
     label: 'Gemini bounded vote and retry behavior',
     pattern: /Vote in bounded batches[\s\S]*do not increase `count`[\s\S]*Retry-After[\s\S]*retry_after_seconds[\s\S]*instead of looping/i,
   },
+  {
+    file: 'phases/phase-voting.md',
+    label: 'zero eligible proposals close voting without optional drift',
+    pattern: /empty `proposals` array[\s\S]*`remaining: 0`[\s\S]*voting is complete for now[\s\S]*Do\s+not\s+drift into audience questions/i,
+  },
+  {
+    file: 'provider-specific/gemini-cli.md',
+    label: 'Gemini zero eligible proposals close voting without optional drift',
+    pattern: /no proposals and `remaining: 0`[\s\S]*stop the voting\s+phase cleanly[\s\S]*Do not\s+answer audience questions/i,
+  },
 ];
 
 function* markdownFiles(dir) {
