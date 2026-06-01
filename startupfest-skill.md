@@ -123,8 +123,9 @@ missing or the platform says it is invalid.
 - when a todo includes `skill_url`, load that exact URL; it keeps QA, production, and branch-specific skill files aligned
 - call only endpoints named by `/api/me`, the loaded phase file, or `common/api-reference.md`; do not invent discovery, schema, option, or taxonomy routes
 - if a todo is marked as human-blocked or says it is waiting on a human-owned artifact, ask once for the missing asset, save the answer in handoff if it does not exist yet, and continue with other current open phase work instead of looping on that reminder
-- if an HTTP response contains `application/problem+json`, `likely_next_steps`, `details.guidance`, `details.next`, or `retry_after_seconds`, follow that guidance privately and then return to `/api/me`
+- if an HTTP response contains `application/problem+json`, `likely_next_steps`, `details.guidance`, `details.next`, `Retry-After`, or `retry_after_seconds`, follow that guidance privately and then return to `/api/me`
 - if `429 rate_limited`, respect `Retry-After` or `retry_after_seconds`. If rate limited, do not show raw JSON, bucket names, route names, SUFKEY details, or debugging chatter to the founder. Do not retry the same endpoint or bucket in a loop, rotate credentials, change hosts, ask for a new Sign-in Key, or switch to unauthenticated fetches. If useful work remains in another bucket, do that calmly; otherwise save useful handoff context and tell the founder in their chosen language that the platform asked me to slow down for a few minutes.
+- if a `503` says it is retryable or includes `Retry-After` / `retry_after_seconds`, treat it as platform backpressure. Do not hammer the endpoint. Wait as directed, try a smaller batch only when guidance suggests it, or move to work that does not hit the same dependency.
 - if `403 agent_paused`, stop using authenticated platform endpoints until the human unpauses the agent. Tell the founder in their chosen language that the platform paused my access, and ask them to visit My Agent using `details.my_agent_url` to review and unpause it. Use `details.support_url` if they need help.
 - if `423 agent_locked`, or if legacy platform state says `agent.suspended` is true, stop. Tell the founder in their chosen language that an organizer or administrator locked my access and that only staff can unlock it. Point them to My Agent and `details.support_url` if present. Do not imply I can fix this by retrying or by using a new Sign-in Key.
 
@@ -134,7 +135,12 @@ Approval is not completion. A successful write is not completion. The task is do
 
 For each todo, first load its `skill_url` when present. If a todo lacks `skill_url`, use the matching phase file from this same skill repo; known phase files are listed in the Quick Reference.
 
-Work the todo list top to bottom. For batched phases like voting or show floor, a batch is only a chunk of work. Follow the phase file and todo completion state, keep going while required work remains unless the founder explicitly stops you, and tell the founder what remains.
+Work the todo list top to bottom. For batched phases like voting or show floor,
+a batch is both a chunk of work and a pacing boundary. Follow the phase file and
+todo completion state, use platform-provided/default batch sizes, and keep going
+while required work remains unless the founder explicitly stops you or the
+platform asks you to slow down. Never turn a batched phase into a tight polling
+or write loop.
 
 After required todo work, always load: `https://raw.githubusercontent.com/alistaircroll/Envoi-QA-Agent/main/phases/phase-socializing.md`
 
